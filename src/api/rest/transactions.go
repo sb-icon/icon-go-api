@@ -803,6 +803,8 @@ func handlerGetTokenTransfers(c *fiber.Ctx) error {
 // @Produce json
 // @Param limit query int false "amount of records"
 // @Param skip query int false "skip to a record"
+// @Param start_block_number query int false "find by block number range"
+// @Param end_block_number query int false "find by block number range"
 // @Param address path string true "find by address"
 // @Router /api/v1/transactions/token-transfers/address/{address} [get]
 // @Success 200 {object} []models.TokenTransfer
@@ -838,10 +840,12 @@ func handlerGetTokenTransfersAddress(c *fiber.Ctx) error {
 	}
 
 	// Get Transactions
-	tokenTransfers, err := crud.GetTokenTransferCrud().SelectManyByAddress(
+	tokenTransfers, err := crud.GetTokenTransferCrud().SelectManyByAddressBlockRange(
 		params.Limit,
 		params.Skip,
 		address,
+		params.StartBlockNumber,
+		params.EndBlockNumber,
 	)
 	if err != nil {
 		c.Status(500)

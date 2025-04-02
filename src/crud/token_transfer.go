@@ -1,6 +1,7 @@
 package crud
 
 import (
+	"strconv"
 	"sync"
 
 	"go.uber.org/zap"
@@ -158,6 +159,56 @@ func (m *TokenTransferCrud) SelectManyByAddress(
 		LIMIT ?
 		OFFSET ?
 	)`, address, limit, skip)
+
+	tokenTransfers := &[]models.TokenTransfer{}
+	db = db.Find(tokenTransfers)
+
+	return tokenTransfers, db.Error
+}
+
+func (m *TokenTransferCrud) SelectManyByAddressBlockRange(
+	limit int,
+	skip int,
+	address string,
+	startBlockNumber int,
+	endBlockNumber int,
+) (*[]models.TokenTransfer, error) {
+	db := m.db
+
+	// Set table
+	db = db.Model(&[]models.TokenTransfer{})
+
+	blockWhereCondition := ""
+	if startBlockNumber != 0 || endBlockNumber != 0 {
+		blockWhereCondition = blockWhereCondition + "and"
+	}
+
+	// start block number
+	if startBlockNumber != 0 {
+		blockWhereCondition = blockWhereCondition + " > " + strconv.Itoa(startBlockNumber)
+	}
+
+	// end block number
+	if endBlockNumber != 0 {
+		blockWhereCondition = blockWhereCondition + " > " + strconv.Itoa(startBlockNumber)
+	}
+
+	// Latest transactions first
+	db = db.Order("block_number desc")
+
+	// Address
+	db = db.Where(`(transaction_hash, log_index)
+	IN (
+		SELECT
+			transaction_hash, log_index
+		FROM
+			token_transfer_by_addresses
+		WHERE
+			address = ? ?
+		ORDER BY block_number desc
+		LIMIT ?
+		OFFSET ?
+	)`, address, blockWhereCondition, limit, skip)
 
 	tokenTransfers := &[]models.TokenTransfer{}
 	db = db.Find(tokenTransfers)
