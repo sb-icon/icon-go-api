@@ -1,8 +1,8 @@
 package rest
 
 import (
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/redis"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/redis"
 	"go.uber.org/zap"
 )
 

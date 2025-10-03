@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/logging"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/logging"
 )
 
 func init() {

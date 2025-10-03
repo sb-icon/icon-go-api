@@ -10,7 +10,7 @@ import (
 	"github.com/go-redis/redis/v8"
 	"go.uber.org/zap"
 
-	"github.com/sudoblockio/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/config"
 )
 
 type Client struct {

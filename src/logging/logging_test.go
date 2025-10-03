@@ -6,7 +6,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/sudoblockio/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/config"
 )
 
 func TestInit(t *testing.T) {

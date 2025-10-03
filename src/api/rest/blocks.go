@@ -9,9 +9,9 @@ import (
 	fiber "github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
 
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/crud"
-	"github.com/sudoblockio/icon-go-api/redis"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/crud"
+	"github.com/sb-icon/icon-go-api/redis"
 )
 
 // BlocksAddHandlers - add blocks endpoints to fiber router

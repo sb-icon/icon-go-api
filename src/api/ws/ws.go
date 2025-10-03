@@ -4,8 +4,8 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
 
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/redis"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/redis"
 )
 
 // WebsocketsAddHandlers - add fiber endpoint handlers for websocket connections

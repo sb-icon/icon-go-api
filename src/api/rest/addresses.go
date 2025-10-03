@@ -10,9 +10,9 @@ import (
 	fiber "github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
 
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/crud"
-	"github.com/sudoblockio/icon-go-api/redis"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/crud"
+	"github.com/sb-icon/icon-go-api/redis"
 )
 
 type AddressesQuery struct {
@@ -341,9 +341,8 @@ func handlerGetTokenAddresses(c *fiber.Ctx) error {
 
 	params := new(SkipLimitQuery)
 	if err := c.QueryParser(params); err != nil {
-		zap.S().Warnf("Addresses Get Handler ERROR: %s", err.Error())
 		c.Status(422)
-		return c.SendString(`{"error": "could not parse query parameters"}`)
+		return c.SendString(`{"error": "could not parse query parameters. Only 'skip' and 'limit' accepted."}`)
 	}
 
 	// Get TokenAddresses

@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/sudoblockio/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/config"
 )
 
 func SuppliesAddHandlers(app *fiber.App) {

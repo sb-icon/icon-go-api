@@ -2,7 +2,7 @@ package service
 
 import (
 	"github.com/stretchr/testify/require"
-	"github.com/sudoblockio/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/config"
 	"testing"
 )
 

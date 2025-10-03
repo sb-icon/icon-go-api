@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/sudoblockio/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/config"
 )
 
 func (c *Client) StartSubscribers() {

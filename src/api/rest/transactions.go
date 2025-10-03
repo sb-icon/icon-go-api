@@ -8,13 +8,13 @@ import (
 	"sync"
 
 	fiber "github.com/gofiber/fiber/v2"
-	"github.com/sudoblockio/icon-go-api/models"
+	"github.com/sb-icon/icon-go-api/models"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/crud"
-	"github.com/sudoblockio/icon-go-api/redis"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/crud"
+	"github.com/sb-icon/icon-go-api/redis"
 )
 
 type TransactionsQuery struct {
@@ -499,7 +499,7 @@ func handlerGetInternalTransactionsByHash(c *fiber.Ctx) error {
 		return c.SendString(`{"error": "hash required"}`)
 	}
 
-	params := new(TransactionsQuery)
+	params := new(SkipLimitQuery)
 	if err := c.QueryParser(params); err != nil {
 		zap.S().Warnf("Transactions Get Handler ERROR: %s", err.Error())
 
@@ -571,7 +571,7 @@ func handlerGetInternalTransactionsAddress(c *fiber.Ctx) error {
 		return c.SendString(`{"error": "address required"}`)
 	}
 
-	params := new(TransactionsQuery)
+	params := new(SkipLimitQuery)
 	if err := c.QueryParser(params); err != nil {
 		zap.S().Warnf("Transactions Get Handler ERROR: %s", err.Error())
 

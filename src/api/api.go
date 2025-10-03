@@ -10,11 +10,11 @@ import (
 	"github.com/gofiber/swagger"
 	"go.uber.org/zap"
 
-	_ "github.com/sudoblockio/icon-go-api/api/docs" // import for swagger docs
-	"github.com/sudoblockio/icon-go-api/api/rest"
-	"github.com/sudoblockio/icon-go-api/api/ws"
-	"github.com/sudoblockio/icon-go-api/config"
-	"github.com/sudoblockio/icon-go-api/global"
+	_ "github.com/sb-icon/icon-go-api/api/docs" // import for swagger docs
+	"github.com/sb-icon/icon-go-api/api/rest"
+	"github.com/sb-icon/icon-go-api/api/ws"
+	"github.com/sb-icon/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/global"
 )
 
 // @title Icon Go API

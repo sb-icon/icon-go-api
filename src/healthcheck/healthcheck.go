@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/sudoblockio/icon-go-api/config"
+	"github.com/sb-icon/icon-go-api/config"
 	"go.uber.org/zap"
 
 	"github.com/InVisionApp/go-health/v2"

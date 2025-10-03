@@ -7,7 +7,7 @@ import (
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 
-	"github.com/sudoblockio/icon-go-api/models"
+	"github.com/sb-icon/icon-go-api/models"
 )
 
 // AddressCrud - type for address table model
