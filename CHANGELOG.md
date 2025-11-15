@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.8](https://github.com/sb-icon/icon-go-api/compare/v0.5.7...v0.5.8) (2025-11-15)
+
+
+### Bug Fixes
+
+* cmc api not parsing properly ([3819021](https://github.com/sb-icon/icon-go-api/commit/381902190bfb6d721f057561f407d777601b13c7))
+
 ## [0.5.7](https://github.com/sb-icon/icon-go-api/compare/v0.5.6...v0.5.7) (2024-11-18)
 
 
