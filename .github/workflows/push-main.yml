@@ -73,13 +73,13 @@ jobs:
         include:
           - cluster: cluster1
             network_name: mainnet
-            network_version: v2
+            network_version: v4
           - cluster: cluster1
             network_name: lisbon
-            network_version: v2
+            network_version: v4
           - cluster: cluster1
             network_name: berlin
-            network_version: v2
+            network_version: v4
 
     steps:
 
